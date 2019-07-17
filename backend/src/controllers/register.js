@@ -1,12 +1,20 @@
+const Register = require('../models/register');
+
 const register = {
-  getRegister: (req, res) => {
-    console.log('Get: Register');
-    res.json({ data: {} });
+  getRegister: async (req, res) => {
+    const register = await Register.findById({ _id : req.params.id });
+
+    console.log(`Get: ${register}`);
+    res.json({ data: register });
   },
 
-  createRegister: (req, res) => {
-    console.log('Create a new register');
-    res.json({ message: 'Create a new register' })
+  createRegister: async (req, res) => {
+    const { name, email, n, m, result } = req.body;
+
+    const newRegister = new Register({ name, email, n, m, result });
+    await newRegister.save();
+
+    res.json({ data: newRegister });
   }
 }
 
