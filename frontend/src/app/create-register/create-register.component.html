@@ -1,0 +1,53 @@
+<div class="create-register-wrapper">
+  <ng-container *ngIf="!this.registersService.register">
+    <h2>Create new register</h2>
+    <form class="form-wrapper" (ngSubmit)="createRegisters(event)">
+      <label>
+        <b>Name:</b>
+        <input type="text" placeholder="Name" name="name" [(ngModel)]="name" required>
+      </label>
+      <label>
+        <b>Email:</b>
+        <input type="email" placeholder="account@mail.com" name="email" [(ngModel)]="email" required>
+      </label>
+      <label>
+        <b>Value N:</b>
+        <input type="number" value="0" name="n" [(ngModel)]="n" required>
+      </label>
+      <label>
+        <b>Value M:</b>
+        <input type="text" value="0" name="m" [(ngModel)]="m" required>
+      </label>
+      <button>CREATE</button>
+    </form>
+  </ng-container>
+
+  <ng-container *ngIf="this.registersService.register">
+    <h2>Register created</h2>
+    <div class="register-created-wrapper">
+      <div>
+        <p>Name:</p>
+        <h5>{{ this.registersService.register.name }}</h5>
+      </div>
+      <div>
+        <p>Email:</p>
+        <h5>{{ this.registersService.register.email }}</h5>
+      </div>
+      <div>
+        <p>Value N</p>
+        <h5>{{ this.registersService.register.n }}</h5>
+      </div>
+      <div>
+        <p>Value M</p>
+        <h5>{{ this.registersService.register.m }}</h5>
+      </div>
+      <div>
+        <p>Result:</p>
+        <h5 >{{ this.registersService.register.result }}</h5>
+      </div>
+      <button (click)="emptyTheRegister()">CREATE ANOTHER</button>
+    </div>
+  </ng-container>
+</div>
+
+<button (click)='consultRegister()'>ASASD</button>

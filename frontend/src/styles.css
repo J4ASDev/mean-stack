@@ -8,6 +8,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+p {
+  margin: 0;
+}
+
 input {
   color: #3c4858;
   outline: none;

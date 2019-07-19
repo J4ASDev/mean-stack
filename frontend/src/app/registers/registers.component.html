@@ -1,1 +1,5 @@
 <p>registers works!</p>
+
+<div *ngFor="let register of this.registersService.listRegisters">
+  <p>{{ register.name }}</p>
+</div>
