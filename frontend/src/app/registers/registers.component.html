@@ -1,5 +1,20 @@
-<p>registers works!</p>
-
-<div *ngFor="let register of this.registersService.listRegisters">
-  <p>{{ register.name }}</p>
-</div>
+<div class="registers-wrapper">
+  <ng-container *ngFor="let register of this.registersService.listRegisters">
+  <div class="register-wrapper">
+    <div>
+      <span>Name: </span> <p>{{ register.name }}</p>
+    </div>
+    <div>
+      <span>Email:</span> <p>{{ register.email }}</p>
+    </div>
+    <div>
+      <span>Value N: </span> <p>{{ register.n }}</p>
+    </div>
+    <div>
+      <span>Value M:</span> <p>{{ register.m }}</p>
+    </div>
+    <div>  
+      <p><span>Result: </span> <p>{{ register.result }}</p>
+    </div>
+  </div>
+</ng-container>

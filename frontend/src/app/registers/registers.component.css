@@ -1,0 +1,26 @@
+.registers-wrapper {
+  margin: 5%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.register-wrapper {
+  display: grid;
+  gap: 10px;
+  border: 1px solid #7e5bef0d;
+  padding: 10px;
+}
+
+.register-wrapper div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+}
+
+.register-wrapper span {
+  font-weight: bold;
+}
+
+.register-wrapper p {
+  border-bottom: 1px solid #7e5bef;
+}

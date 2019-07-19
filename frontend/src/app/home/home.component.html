@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="home-wrapper">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let photo of this.slides">
+        <div class="swiper-photo-wrapper">
+          <p>{{ photo.title }}</p>
+          <img [src]="photo.url" alt="photo.title">
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>

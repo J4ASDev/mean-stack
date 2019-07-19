@@ -22,25 +22,23 @@ export class CreateRegisterComponent implements OnInit {
   }
 
   createRegisters() {
-    this.registersService.register = {
-      name: this.name,
-      email: this.email,
-      n: this.n,
-      m: this.m
-    };
+    if(this.name && this.email && this.n && this.m) {
+      
+      this.registersService.register = {
+        name: this.name,
+        email: this.email,
+        n: this.n,
+        m: this.m
+      };
 
-    this.registersService.createRegisters(this.registersService.register)
-      .subscribe(register => {
-        this.registersService.register = register as Register;
-      });
+      this.registersService.createRegisters(this.registersService.register)
+        .subscribe(register => {
+          this.registersService.register = register as Register;
+        });
+    }
   }
 
   emptyTheRegister() {
     this.registersService.emptyTheRegister();
   }
-
-  consultRegister() {
-    console.log('Angular Consult:', this.registersService.register)
-  }
-
 }
